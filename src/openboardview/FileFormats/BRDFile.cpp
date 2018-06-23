@@ -135,10 +135,11 @@ BRDFile::BRDFile(std::vector<char> &buf) {
 			current_block = 3;
 			continue;
 		}
-		if (!strcmp(line, "Parts:")) {
+		if ((!strcmp(line, "Parts:"))||(!strcmp(line,"Pins1:"))) {
 			current_block = 4;
 			continue;
 		}
+		if ((!strcmp(line, "Pins:"))||(!strcmp(line, "Pins2:"))) {
 		if (!strcmp(line, "Pins:")) {
 			current_block = 5;
 			continue;
